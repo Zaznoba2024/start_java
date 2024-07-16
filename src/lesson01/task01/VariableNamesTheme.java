@@ -32,8 +32,8 @@ public class VariableNamesTheme {
         char symbol = '&';
         System.out.println("Переменная хранит символ & - " + symbol);
         // код ошибки
-        String errorСode = "404";
-        System.out.println("Код ошибки - " + errorСode);
+        String errorCode = "404";
+        System.out.println("Код ошибки - " + errorCode);
         // тип сообщения
         String messageType = "Начало диалога";
         System.out.println("Тип сообщения - " + messageType);
@@ -75,7 +75,7 @@ public class VariableNamesTheme {
         System.out.println("Заголовок электронной книги: " + ebookTitle);
         // размер
         int size = 42;
-        System.out.println("Размер: 42");
+        System.out.println("Размер: " + size);
         // вместимость
         int capacity = 10;
         System.out.println("Вместимость - " + capacity);
