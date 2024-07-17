@@ -5,7 +5,6 @@ import java.math.RoundingMode;
 
 public class VariablesTheme {
     public static void main(String[] args) {
-
         System.out.println("\nПеременные: примитивные типы данных");
 
         System.out.println("\n1. Вывод характеристик компьютера");
@@ -49,26 +48,26 @@ public class VariablesTheme {
         int extremesIntValue = Integer.MAX_VALUE;
         long extremesLongValue = Long.MAX_VALUE;
         char extremesCharValue = Character.MAX_VALUE;
-        System.out.println("Значения для типа byte: "
-                + extremesByteValue + " "
-                + (++extremesByteValue) + " "
-                + (--extremesByteValue));
-        System.out.println("Значения для типа short: "
-                + extremesShortValue + " "
-                + (++extremesShortValue) + " "
-                + (--extremesShortValue));
-        System.out.println("Значения для типа int: "
-                + extremesIntValue + " "
-                + (++extremesIntValue) + " "
-                + (--extremesIntValue));
-        System.out.println("Значения для типа long: "
-                + extremesLongValue + " "
-                + (++extremesLongValue) + " "
-                + (--extremesLongValue));
-        System.out.println("Значения для типа char: "
-                + (int) extremesCharValue + " "
-                + (int) (++extremesCharValue) + " "
-                + (int) (--extremesCharValue));
+        System.out.println("Значения для типа byte: " +
+                extremesByteValue + " " +
+                (++extremesByteValue) + " " +
+                (--extremesByteValue));
+        System.out.println("Значения для типа short: " +
+                extremesShortValue + " " +
+                (++extremesShortValue) + " " +
+                (--extremesShortValue));
+        System.out.println("Значения для типа int: " +
+                extremesIntValue + " " +
+                (++extremesIntValue) + " " +
+                (--extremesIntValue));
+        System.out.println("Значения для типа long: " +
+                extremesLongValue + " " +
+                (++extremesLongValue) + " " +
+                (--extremesLongValue));
+        System.out.println("Значения для типа char: " +
+                (int) extremesCharValue + " " +
+                (int) (++extremesCharValue) + " " +
+                (int) (--extremesCharValue));
 
         System.out.println("\n5. Перестановка значений переменных");
         int num1 = 2;
@@ -101,7 +100,7 @@ public class VariablesTheme {
         System.out.println((int) asterisk + " -- " + asterisk);
         System.out.println((int) atSign + " -- " + atSign);
         System.out.println((int) verticalBar + " -- " + verticalBar);
-        System.out.println((int)tilde + " -- " + tilde);
+        System.out.println((int) tilde + " -- " + tilde);
 
         System.out.println("\n7. Вывод в консоль ASCII-арт Дюка");
         char slash = '/';
@@ -111,7 +110,8 @@ public class VariablesTheme {
         char rightParenthesis = ')';
         System.out.println("    " + slash + backslash);
         System.out.println("   " + slash + "  " + backslash);
-        System.out.println("  " + slash + underscore + leftParenthesis + " " + rightParenthesis + backslash);
+        System.out.println("  " + slash + underscore + leftParenthesis +
+                " " + rightParenthesis + backslash);
         System.out.println(" " + slash + "      " + backslash);
         System.out.printf("%c%c%c%c%c%c%c%c%c%c\n",
                 slash, underscore, underscore, underscore, underscore,
@@ -138,7 +138,8 @@ public class VariablesTheme {
         var bookPriceDecimal = new BigDecimal("235.83");
         var discountDecimal = new BigDecimal("0.11");
         var basePriceDecimal = penPriceDecimal.add(bookPriceDecimal);
-        var sumDiscountDecimal = basePriceDecimal.multiply(discountDecimal).setScale(2, RoundingMode.HALF_UP);
+        var sumDiscountDecimal = basePriceDecimal.multiply(discountDecimal)
+                .setScale(2, RoundingMode.HALF_UP);
         var discountPriceDecimal = basePriceDecimal.subtract(sumDiscountDecimal);
         System.out.println("Стоимость товаров без скидки = " + basePriceDecimal);
         System.out.println("Сумма скидки = " + sumDiscountDecimal);
