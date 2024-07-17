@@ -101,7 +101,7 @@ public class VariablesTheme {
         System.out.println((int) asterisk + " -- " + asterisk);
         System.out.println((int) atSign + " -- " + atSign);
         System.out.println((int) verticalBar + " -- " + verticalBar);
-        System.out.println((int) tilde + " -- " + tilde);
+        System.out.println((int)tilde + " -- " + tilde);
 
         System.out.println("\n7. Вывод в консоль ASCII-арт Дюка");
         char slash = '/';
