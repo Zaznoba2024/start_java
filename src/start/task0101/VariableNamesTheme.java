@@ -1,4 +1,4 @@
-package lesson01.task01;
+package start.task0101;
 
 public class VariableNamesTheme {
     public static void main(String[] args) {
