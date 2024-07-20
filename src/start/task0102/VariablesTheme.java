@@ -32,9 +32,9 @@ public class VariablesTheme {
         float basePrice = penPrice + bookPrice;
         float sumDiscount = basePrice * discount;
         float discountPrice = basePrice - sumDiscount;
-        System.out.printf("Стоимость товаров без скидки = %.2f\n", basePrice);
-        System.out.printf("Сумма скидки = %.2f\n", sumDiscount);
-        System.out.printf("Стоимость товаров со скидкой = %.2f\n", discountPrice);
+        System.out.printf("Стоимость товаров без скидки = %.2f%n", basePrice);
+        System.out.printf("Сумма скидки = %.2f%n", sumDiscount);
+        System.out.printf("Стоимость товаров со скидкой = %.2f%n", discountPrice);
 
         System.out.println("\n3. Вывод слова JAVA");
         System.out.println("   J   a V     V a   ");
@@ -113,7 +113,7 @@ public class VariablesTheme {
         System.out.println("  " + slash + underscore + leftParenthesis +
                 " " + rightParenthesis + backslash);
         System.out.println(" " + slash + "      " + backslash);
-        System.out.printf("%c%c%c%c%c%c%c%c%c%c\n",
+        System.out.printf("%c%c%c%c%c%c%c%c%c%c%n",
                 slash, underscore, underscore, underscore, underscore,
                 slash, backslash, underscore, underscore, backslash);
 

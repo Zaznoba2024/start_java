@@ -2,7 +2,6 @@ package start.task0101;
 
 public class VariableNamesTheme {
     public static void main(String[] args) {
-
         System.out.println("\nЗадание на именование переменных\n");
 
         System.out.println("1. Разные переменные");
