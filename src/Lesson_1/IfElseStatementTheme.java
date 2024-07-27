@@ -1,4 +1,4 @@
-package start.task0103;
+package Lesson_1;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -47,17 +47,21 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n3. Проверка числа.");
-        int number = 24;
+        int number = -41;
         if (number == 0) {
             System.out.println("Число является нулем.");
-        } else if (number % 2 == 0 && number < 0) {
-            System.out.println(number + " является отрицательным и четным.");
-        } else if (number % 2 == 0 && number > 0) {
-            System.out.println(number + " является положительным и четным.");
-        } else if (number % 2 != 0 && number < 0) {
-            System.out.println(number + " является отрицательным и нечетным.");
         } else {
-            System.out.println(number + " является положительным и нечетным.");
+            System.out.printf(number + " является ");
+            if (number > 0) {
+                System.out.printf("положительным ");
+            } else {
+                System.out.printf("отрицательным ");
+            }
+            if (number % 2 == 0) {
+                System.out.printf("и четным.\n");
+            } else {
+                System.out.printf("и нечетным.\n");
+            }
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах.");
@@ -69,7 +73,7 @@ public class IfElseStatementTheme {
         int num2Hundreds = num2 / 100;
         int num2Tens = num2 / 10 % 10;
         int num2Ones = num2 % 10;
-        if (!(num1Hundreds == num2Hundreds) && !(num1Tens == num2Tens) && !(num1Ones == num2Ones)) {
+        if ((num1Hundreds != num2Hundreds) && (num1Tens != num2Tens) && (num1Ones != num2Ones)) {
             System.out.printf("В числах %s и %s нет равных цифр в одинаковых разрядах.%n",
                     num1, num2);
         } else {
@@ -119,21 +123,21 @@ public class IfElseStatementTheme {
         } else if (historyRating > 0.6) {
             historyGrade = 3;
         }
-        float programSinceRating = 0.92f;
-        float programSinceGrade = 2;
-        if (programSinceRating > 0.91) {
-            programSinceGrade = 5;
-        } else if (programSinceRating > 0.73) {
-            programSinceGrade = 4;
-        } else if (programSinceRating > 0.6) {
-            programSinceGrade = 3;
+        float csRating = 0.92f;
+        float csGrade = 2;
+        if (csRating > 0.91) {
+            csGrade = 5;
+        } else if (csRating > 0.73) {
+            csGrade = 4;
+        } else if (csRating > 0.6) {
+            csGrade = 3;
         }
         System.out.printf("Предмет история, оценка %.0f%n", historyGrade);
-        System.out.printf("Предмет программирование, оценка %.0f%n", programSinceGrade);
+        System.out.printf("Предмет программирование, оценка %.0f%n", csGrade);
         System.out.printf("Средний балл оценок по предметам %s%n",
-                (historyGrade + programSinceGrade) / 2);
+                (historyGrade + csGrade) / 2);
         System.out.printf("Средний процент по предметам %s%n",
-                (historyRating + programSinceRating) / 2 * 100);
+                (historyRating + csRating) / 2 * 100);
 
         System.out.println("\n8. Расчет годовой прибыли.");
         double revenueMonth = 13025.233;
@@ -159,24 +163,24 @@ public class IfElseStatementTheme {
         System.out.printf("Сумма вклада = %s%n", depositBigDecimal.toPlainString());
         System.out.printf("Сумма начисленного процента = %s%n",
                 (depositBigDecimal.multiply(interestAmountBigDecimal))
-                .setScale(2, RoundingMode.HALF_UP)
-                .toPlainString());
+                        .setScale(2, RoundingMode.HALF_UP)
+                        .toPlainString());
         System.out.printf("Итоговая сумма с процентами = %s%n",
                 (depositBigDecimal.multiply(interestAmountBigDecimal.add(new BigDecimal("1"))))
-                .setScale(2, RoundingMode.HALF_UP)
-                .toPlainString());
+                        .setScale(2, RoundingMode.HALF_UP)
+                        .toPlainString());
 
         System.out.println("\n10*. Расчет годовой прибыли.");
         var revenueMonthBigDecimal = new BigDecimal("13025.233");
         var rentMonthBigDecimal = new BigDecimal("5123.018");
         var costMonthBigDecimal = new BigDecimal("9001.729");
-        var profitYearBigDecimal = 
+        var profitYearBigDecimal =
                 (revenueMonthBigDecimal
-                .subtract(rentMonthBigDecimal))
-                .subtract(costMonthBigDecimal)
-                .multiply(new BigDecimal("12"))
-                .setScale(2, RoundingMode.HALF_UP);
-        if (profitYearBigDecimal.compareTo(new BigDecimal("0")) > 0) {
+                        .subtract(rentMonthBigDecimal))
+                        .subtract(costMonthBigDecimal)
+                        .multiply(BigDecimal.valueOf(12))
+                        .setScale(2, RoundingMode.HALF_UP);
+        if (profitYearBigDecimal.compareTo(BigDecimal.valueOf(0)) > 0) {
             System.out.printf("Прибыль за год: +%s руб.%n", profitYearBigDecimal);
         } else {
             System.out.printf("Прибыль за год: %s руб.%n", profitYearBigDecimal);
