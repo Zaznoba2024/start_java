@@ -105,18 +105,18 @@ public class CyclesTheme {
         int k = m;
         do {
             for (int i = 0; i < k; i++) {
-                System.out.printf("$");
+                System.out.print("$");
             }
-            System.out.printf("\n");
+            System.out.println();
             k++;
         } while (k <= n);
         k--;
         do {
             k--;
             for (int i = 0; i < k; i++) {
-                System.out.printf("$");
+                System.out.print("$");
             }
-            System.out.printf("\n");
+            System.out.println();
         } while (k >= m);
 
         System.out.println("\n7. Вывод ASCII-символов.");
@@ -180,7 +180,7 @@ public class CyclesTheme {
         }
         System.out.println();
         for (int i = 0; i < 36; i++) {
-            System.out.printf("-");
+            System.out.print("-");
         }
         System.out.println();
         for (int i = 2; i < 10; i++) {
