@@ -51,7 +51,7 @@ public class CyclesTheme {
         int bottomLim = 1;
         if (bottomLim % 2 == 0) bottomLim++;
         int upperLim = 24;
-        for (int i = bottomLim; i < upperLim; i = i) {
+        for (int i = bottomLim; i < upperLim;) {
             for (int j = 0; j < 5; j++) {
                 if (i < upperLim) {
                     System.out.printf("%4d", i);
