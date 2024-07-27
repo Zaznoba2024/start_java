@@ -51,16 +51,16 @@ public class IfElseStatementTheme {
         if (number == 0) {
             System.out.println("Число является нулем.");
         } else {
-            System.out.printf(number + " является ");
+            System.out.print(number + " является ");
             if (number > 0) {
-                System.out.printf("положительным ");
+                System.out.print("положительным ");
             } else {
-                System.out.printf("отрицательным ");
+                System.out.print("отрицательным ");
             }
             if (number % 2 == 0) {
-                System.out.printf("и четным.\n");
+                System.out.print("и четным.\n");
             } else {
-                System.out.printf("и нечетным.\n");
+                System.out.print("и нечетным.\n");
             }
         }
 
