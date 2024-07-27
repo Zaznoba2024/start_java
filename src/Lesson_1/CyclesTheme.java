@@ -122,8 +122,7 @@ public class CyclesTheme {
         System.out.println("\n7. Вывод ASCII-символов.");
         System.out.printf("%-11s%-11s%-11s\n", "DECIMAL", "CHARACTER", "DESCRIPTION");
         char digitSymbol = '0';
-        int digit = (int) digitSymbol;
-        for (int i = 33; i < digit; i = i + 2) {
+        for (int i = 33; i < (int) digitSymbol; i = i + 2) {
             System.out.printf("%5s%11s%11s%s\n", i, (char) i, " ", Character.getName(i));
         }
         char smallSymbolA = 'a';
