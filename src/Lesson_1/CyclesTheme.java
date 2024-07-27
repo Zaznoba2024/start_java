@@ -128,9 +128,8 @@ public class CyclesTheme {
         char smallSymbolA = 'a';
         char smallSymbolZ = 'z';
         int smallA = (int) smallSymbolA;
-        int smallZ = (int) smallSymbolZ;
         if (smallA % 2 != 0) smallA++;
-        for (int i = smallA; i <= smallZ; i = i + 2) {
+        for (int i = smallA; i <= (int) smallSymbolZ; i = i + 2) {
             System.out.printf("%5s%11s%11s%s\n", i, (char) i, " ", Character.getName(i));
         }
 
