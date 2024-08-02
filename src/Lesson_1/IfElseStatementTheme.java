@@ -153,8 +153,8 @@ public class IfElseStatementTheme {
         System.out.println("\n9. Подсчет начисленных банком %.");
         BigDecimal depositBigDecimal = new BigDecimal("321123.59");
         BigDecimal interestAmountBigDecimal = new BigDecimal("0.1");
-        BigDecimal grade1 = new BigDecimal("100000");
-        BigDecimal grade2 = new BigDecimal("300000");
+        BigDecimal grade1 = BigDecimal.valueOf(100000);
+        BigDecimal grade2 = BigDecimal.valueOf(300000);
         if (depositBigDecimal.compareTo(grade1) < 0) {
             interestAmountBigDecimal = new BigDecimal("0.05");
         } else if (depositBigDecimal.compareTo(grade2) < 0) {
@@ -174,13 +174,12 @@ public class IfElseStatementTheme {
         var revenueMonthBigDecimal = new BigDecimal("13025.233");
         var rentMonthBigDecimal = new BigDecimal("5123.018");
         var costMonthBigDecimal = new BigDecimal("9001.729");
-        var profitYearBigDecimal =
-                (revenueMonthBigDecimal
+        var profitYearBigDecimal = (revenueMonthBigDecimal
                         .subtract(rentMonthBigDecimal))
                         .subtract(costMonthBigDecimal)
                         .multiply(BigDecimal.valueOf(12))
                         .setScale(2, RoundingMode.HALF_UP);
-        if (profitYearBigDecimal.compareTo(BigDecimal.valueOf(0)) > 0) {
+        if (profitYearBigDecimal.compareTo(BigDecimal.ZERO) > 0) {
             System.out.printf("Прибыль за год: +%s руб.%n", profitYearBigDecimal);
         } else {
             System.out.printf("Прибыль за год: %s руб.%n", profitYearBigDecimal);
