@@ -36,14 +36,14 @@ public class CyclesTheme {
         }
 
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр.");
-        int num = 1234;
+        int originNum = 1234;
         int sum = 0;
         System.out.print("Исходное число в обратном порядке: ");
-        while (num > 0) {
-            int temp = num % 10;
-            System.out.print(temp);
-            sum += temp;
-            num /= 10;
+        while (originNum > 0) {
+            int remainder = originNum % 10;
+            System.out.print(remainder);
+            sum += remainder;
+            originNum /= 10;
         }
         System.out.printf("\nСумма цифр: %s\n", sum);
 
@@ -64,10 +64,10 @@ public class CyclesTheme {
         }
 
         System.out.println("\n5. Проверка количества двоек числа на четность/нечетность.");
-        int originNum = 3242592;
+        originNum = 3242592;
         int originNumCopy = originNum;
         int countTwos = 0;
-        while (originNumCopy / 10 > 0) {
+        while (originNumCopy > 0) {
             if (originNumCopy % 10 == 2) {
                 countTwos++;
             }
@@ -117,25 +117,25 @@ public class CyclesTheme {
 
         System.out.println("\n7. Вывод ASCII-символов.");
         System.out.printf("%-11s%-11s%-11s\n", "DECIMAL", "CHARACTER", "DESCRIPTION");
-        for (int i = 33; i < (int) '0'; i = i + 2) {
+        for (int i = '!'; i < '0'; i += 2) {
             System.out.printf("%5s%11s%11s%s\n", i, (char) i, " ", Character.getName(i));
         }
-        int smallA = 'a';
-        if ((int) 'a' % 2 != 0) smallA++;
-        for (int i = smallA; i <= (int) 'z'; i = i + 2) {
+        int beginSymbol = 'a';
+        if ('a' % 2 != 0) beginSymbol++;
+        for (int i = beginSymbol; i <= 'z'; i += 2) {
             System.out.printf("%5s%11s%11s%s\n", i, (char) i, " ", Character.getName(i));
         }
 
         System.out.println("\n8. Проверка, является ли число палиндромом.");
         int palindrome = 1234321;
         int palindromeCopy = palindrome;
-        int reversedNumber = 0;
+        int reversedNum = 0;
         while (palindrome > 0) {
             int digit = palindrome % 10;
-            reversedNumber = (reversedNumber * 10) + digit;
+            reversedNum = (reversedNum * 10) + digit;
             palindrome /= 10;
         }
-        if (palindromeCopy == reversedNumber) {
+        if (palindromeCopy == reversedNum) {
             System.out.printf("Число %s - палиндром.\n", palindromeCopy);
         } else {
             System.out.printf("Число %s - не палиндром.\n", palindromeCopy);
@@ -143,23 +143,23 @@ public class CyclesTheme {
 
         System.out.println("\n9. Проверка, является ли число счастливым.");
         int happyNum = 569497;
-        int leftPartHappyNum = happyNum / 1000;
-        int leftPartHappyNumsSum = 0;
-        int rightPartHappyNum = happyNum % 1000;
-        int rightPartHappyNumsSum = 0;
+        int leftHalfNum = happyNum / 1000;
+        int leftHalfNumsSum = 0;
+        int rightHalfNum = happyNum % 1000;
+        int rightHalfNumsSum = 0;
         for (int i = 0; i < 3; i++) {
-            leftPartHappyNumsSum += leftPartHappyNum % 10;
-            leftPartHappyNum /= 10;
-            rightPartHappyNumsSum += rightPartHappyNum % 10;
-            rightPartHappyNum /= 10;
+            leftHalfNumsSum += leftHalfNum % 10;
+            leftHalfNum /= 10;
+            rightHalfNumsSum += rightHalfNum % 10;
+            rightHalfNum /= 10;
         }
         String happyNumResult = "";
-        if (leftPartHappyNumsSum != rightPartHappyNumsSum) {
+        if (leftHalfNumsSum != rightHalfNumsSum) {
             happyNumResult = "не";
         }
         System.out.printf("Число %s - %sсчастливое\nСумма цифр %s = %s\nСумма цифр %s = %s\n",
-                happyNum, happyNumResult, happyNum / 1000, leftPartHappyNumsSum,
-                happyNum % 1000, rightPartHappyNumsSum);
+                happyNum, happyNumResult, happyNum / 1000, leftHalfNumsSum,
+                happyNum % 1000, rightHalfNumsSum);
 
         System.out.println("\n10. Вывод таблицы умножения Пифагора.");
         System.out.printf("%4s", "|");
