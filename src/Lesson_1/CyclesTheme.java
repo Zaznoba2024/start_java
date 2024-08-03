@@ -121,7 +121,7 @@ public class CyclesTheme {
             System.out.printf("%5s%11s%11s%s\n", i, (char) i, " ", Character.getName(i));
         }
         int beginSymbol = 'a';
-        if ('a' % 2 != 0) beginSymbol++;
+        if (beginSymbol % 2 != 0) beginSymbol++;
         for (int i = beginSymbol; i <= 'z'; i += 2) {
             System.out.printf("%5s%11s%11s%s\n", i, (char) i, " ", Character.getName(i));
         }
