@@ -9,30 +9,29 @@ public class Calculator {
         int num1 = scanner.nextInt();
         int num2 = scanner.nextInt();
         System.out.println("Введите математическую операцию (+, -, *, /, ^, %).");
-        Scanner scannerOperation = new Scanner(System.in);
-        String operation = scannerOperation.nextLine();
-        while (!("+".equals(operation)) && !("-".equals(operation)) &&
-                !("*".equals(operation)) && !("/".equals(operation)) &&
-                !("^".equals(operation)) && !("%".equals(operation))) {
+        String operation = scanner.next();
+        while (!"+".equals(operation) && !"-".equals(operation) &&
+                !"*".equals(operation) && !"/".equals(operation) &&
+                !"^".equals(operation) && !"%".equals(operation)) {
             System.out.println("Математическая операция некорректна. Введите +, -, *, /, ^ или %");
-            operation = scannerOperation.nextLine();
+            operation = scanner.next();
         }
-        int resultNum = num1;
+        int result = num1;
         if ("+".equals(operation)) {
-            resultNum += num2;
+            result += num2;
         } else if ("-".equals(operation)) {
-            resultNum -= num2;
+            result -= num2;
         } else if ("*".equals(operation)) {
-            resultNum *= num2;
+            result *= num2;
         } else if ("/".equals(operation)) {
-            resultNum /= num2;
+            result /= num2;
         } else if ("^".equals(operation)) {
             for (int i = 1; i < num2; i++) {
-                resultNum *= num1;
+                result *= num1;
             }
         } else {
-            resultNum %= num2;
+            result %= num2;
         }
-        System.out.printf("%s %s %s = %s", num1, operation, num2, resultNum);
+        System.out.printf("%s %s %s = %s", num1, operation, num2, result);
     }
 }
