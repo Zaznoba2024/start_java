@@ -1,7 +1,7 @@
 package Lesson_2;
 
 public class Person {
-    String gender = "female";
+    String gender = "женщина";
     String name = "Софья";
     int height = 172;
     int weight = 58;
