@@ -41,7 +41,7 @@ public class Calculator {
                     return result = Double.NaN;
                 }
                 if (mathOperation == '/') {
-                    return result = num1 / num2;
+                    return result = (double) num1 / (double) num2;
                 }
                 return result = num1 % num2;
             case '^':
