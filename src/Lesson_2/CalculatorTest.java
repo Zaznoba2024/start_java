@@ -17,11 +17,11 @@ public class CalculatorTest {
                 System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
                 operation = scanner.next().charAt(0);
                 calculator.setOperation(operation);
-                if (!calculator.isCorrectOperation()) {
+                if (calculator.isIncorrectOperation()) {
                     System.out.print("Ошибка: операция '" + operation + "' не поддерживается.\n" +
                             "Доступны следующие операции: +, -, *, /, ^, %\n");
                 }
-            } while (!calculator.isCorrectOperation());
+            } while (calculator.isIncorrectOperation());
             System.out.print("Введите второе число: ");
             int num2 = scanner.nextInt();
             calculator.setNum2(num2);

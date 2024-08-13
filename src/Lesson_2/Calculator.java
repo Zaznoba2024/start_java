@@ -7,7 +7,7 @@ public class Calculator {
     private double result;
     private boolean isCorrectOperation;
 
-    public boolean isCorrectOperation() {
+    public boolean isIncorrectOperation() {
         return isCorrectOperation;
     }
 
@@ -24,9 +24,9 @@ public class Calculator {
                 operation == '*' || operation == '/' ||
                 operation == '^' || operation == '%') {
             this.operation = operation;
-            isCorrectOperation = true;
-        } else {
             isCorrectOperation = false;
+        } else {
+            isCorrectOperation = true;
         }
     }
 
