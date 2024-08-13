@@ -7,32 +7,40 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
 
-        String answer = "";
+        String answer;
         do {
             System.out.print("Введите первое число: ");
-            calculator.setNum1(scanner.nextInt());
+            int num1 = scanner.nextInt();
+            calculator.setNum1(num1);
+            char operation;
             do {
                 System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
-                char operation = scanner.next().charAt(0);
-                calculator.setMathOperation(operation);
-                if ("Ошибка ввода".equals(calculator.inputResult)) {
+                operation = scanner.next().charAt(0);
+                calculator.setOperation(operation);
+                if (!calculator.isCorrectOperation()) {
                     System.out.print("Ошибка: операция '" + operation + "' не поддерживается.\n" +
                             "Доступны следующие операции: +, -, *, /, ^, %\n");
                 }
-            } while ("Ошибка ввода".equals(calculator.inputResult));
+            } while (!calculator.isCorrectOperation());
             System.out.print("Введите второе число: ");
-            calculator.setNum2(scanner.nextInt());
+            int num2 = scanner.nextInt();
+            calculator.setNum2(num2);
 
-            calculator.calculate();
-            calculator.print();
+            double result = calculator.calculate();
+            print(num1, operation, num2, result);
 
-            while (!"no".equals(answer)) {
+            answer = "";
+            while (!"yes".equals(answer) && !"no".equals(answer)) {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 answer = scanner.next();
-                if ("yes".equals(answer)) {
-                    break;
-                }
             }
         } while (!"no".equals(answer));
+
+    }
+
+    public static void print(int num1, char operation, int num2, double result) {
+        if (!Double.isNaN(result)) {
+            System.out.printf("%s %c %s = %s\n", num1, operation, num2, result);
+        }
     }
 }

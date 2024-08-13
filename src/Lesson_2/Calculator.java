@@ -3,9 +3,13 @@ package Lesson_2;
 public class Calculator {
     private int num1;
     private int num2;
-    private char mathOperation;
-    double result;
-    public String inputResult;
+    private char operation;
+    private double result;
+    private boolean isCorrectOperation;
+
+    public boolean isCorrectOperation() {
+        return isCorrectOperation;
+    }
 
     public void setNum1(int num1) {
         this.num1 = num1;
@@ -15,55 +19,43 @@ public class Calculator {
         this.num2 = num2;
     }
 
-    public void setMathOperation(char mathOperation) {
-        if (mathOperation != '+' && mathOperation != '-' &&
-                mathOperation != '*' && mathOperation != '/' &&
-                mathOperation != '^' && mathOperation != '%') {
-            inputResult = "Ошибка ввода";
+    public void setOperation(char operation) {
+        if (operation == '+' || operation == '-' ||
+                operation == '*' || operation == '/' ||
+                operation == '^' || operation == '%') {
+            this.operation = operation;
+            isCorrectOperation = true;
         } else {
-            this.mathOperation = mathOperation;
-            inputResult = "";
+            isCorrectOperation = false;
         }
     }
 
     public double calculate() {
-        switch (mathOperation) {
+        switch (operation) {
             case '+':
-                return result = num1 + num2;
+                return num1 + num2;
             case '-':
-                return result = num1 - num2;
+                return num1 - num2;
             case '*':
-                return result = num1 * num2;
+                return num1 * num2;
             case '/':
             case '%':
                 if (num2 == 0) {
                     System.out.println("Ошибка: деление на ноль запрещено");
-                    return result = Double.NaN;
+                    return Double.NaN;
                 }
-                if (mathOperation == '/') {
-                    return result = (double) num1 / (double) num2;
-                }
-                return result = num1 % num2;
+                return operation == '/' ? (double) num1 / num2 : num1 % num2;
             case '^':
                 if (num2 == 0) {
-                    return result = 1;
+                    return 1;
                 }
                 result = num1;
                 for (int i = 1; i < Math.abs(num2); i++) {
                     result *= num1;
                 }
-                if (num2 < 0) {
-                    return result = 1 / result;
-                }
-                return result;
+                return num2 > 0 ? result : 1 / result;
             default:
-                throw new IllegalStateException("Некорректная операция: " + mathOperation);
-        }
-    }
-
-    public void print() {
-        if (!Double.isNaN(result)) {
-            System.out.printf("%s %c %s = %s\n", num1, mathOperation, num2, result);
+                throw new IllegalStateException("Некорректная операция: " + operation);
         }
     }
 }
