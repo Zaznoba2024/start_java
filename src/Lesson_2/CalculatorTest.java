@@ -35,7 +35,6 @@ public class CalculatorTest {
                 answer = scanner.next();
             }
         } while (!"no".equals(answer));
-
     }
 
     public static void print(int num1, char operation, int num2, double result) {
