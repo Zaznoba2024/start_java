@@ -4,7 +4,6 @@ public class Calculator {
     private int num1;
     private int num2;
     private char operation;
-    private double result;
     private boolean isCorrectOperation;
 
     public boolean isIncorrectOperation() {
@@ -31,6 +30,7 @@ public class Calculator {
     }
 
     public double calculate() {
+        double result;
         switch (operation) {
             case '+':
                 return num1 + num2;
