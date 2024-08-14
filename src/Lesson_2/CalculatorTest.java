@@ -16,12 +16,11 @@ public class CalculatorTest {
             do {
                 System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
                 operation = scanner.next().charAt(0);
-                calculator.setOperation(operation);
-                if (calculator.isIncorrectOperation()) {
+                if (!calculator.setOperation(operation)) {
                     System.out.print("Ошибка: операция '" + operation + "' не поддерживается.\n" +
                             "Доступны следующие операции: +, -, *, /, ^, %\n");
                 }
-            } while (calculator.isIncorrectOperation());
+            } while (!calculator.setOperation(operation));
             System.out.print("Введите второе число: ");
             int num2 = scanner.nextInt();
             calculator.setNum2(num2);
@@ -29,11 +28,10 @@ public class CalculatorTest {
             double result = calculator.calculate();
             print(num1, operation, num2, result);
 
-            answer = "";
-            while (!"yes".equals(answer) && !"no".equals(answer)) {
+            do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 answer = scanner.next();
-            }
+            } while (!"yes".equals(answer) && !"no".equals(answer));
         } while (!"no".equals(answer));
     }
 

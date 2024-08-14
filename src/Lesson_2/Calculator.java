@@ -4,11 +4,6 @@ public class Calculator {
     private int num1;
     private int num2;
     private char operation;
-    private boolean isCorrectOperation;
-
-    public boolean isIncorrectOperation() {
-        return isCorrectOperation;
-    }
 
     public void setNum1(int num1) {
         this.num1 = num1;
@@ -18,19 +13,17 @@ public class Calculator {
         this.num2 = num2;
     }
 
-    public void setOperation(char operation) {
+    public boolean setOperation(char operation) {
         if (operation == '+' || operation == '-' ||
                 operation == '*' || operation == '/' ||
                 operation == '^' || operation == '%') {
             this.operation = operation;
-            isCorrectOperation = false;
-        } else {
-            isCorrectOperation = true;
+            return true;
         }
+        return false;
     }
 
     public double calculate() {
-        double result;
         switch (operation) {
             case '+':
                 return num1 + num2;
@@ -46,6 +39,7 @@ public class Calculator {
                 }
                 return operation == '/' ? (double) num1 / num2 : num1 % num2;
             case '^':
+                double result;
                 if (num2 == 0) {
                     return 1;
                 }
