@@ -15,14 +15,14 @@ public class JaegerTest {
                 85.34f, 2.312f, 7, 4);
 
         System.out.printf("Полная информация. Робот №1." +
-                        "\nМодель: %s\nМарка: %s\nСтрана происхождения: %s" +
-                        "\nВысота: %s\nВес: %s\nСила: %s\nБроня: %s\n\n",
+                "\nМодель: %s\nМарка: %s\nСтрана происхождения: %s" +
+                "\nВысота: %s\nВес: %s\nСила: %s\nБроня: %s\n\n",
                 chernoAlpha.getModelName(), chernoAlpha.getMark(), chernoAlpha.getOrigin(),
                 chernoAlpha.getHeight(), chernoAlpha.getWeight(),
                 chernoAlpha.getStrength(), chernoAlpha.getArmor());
         System.out.printf("Полная информация. Робот №2." +
-                        "\nМодель: %s\nМарка: %s\nСтрана происхождения: %s" +
-                        "\nВысота: %s\nВес: %s\nСила: %s\nБроня: %s\n\n",
+                "\nМодель: %s\nМарка: %s\nСтрана происхождения: %s" +
+                "\nВысота: %s\nВес: %s\nСила: %s\nБроня: %s\n\n",
                 coyoteTango.getModelName(), coyoteTango.getMark(), coyoteTango.getOrigin(),
                 coyoteTango.getHeight(), coyoteTango.getWeight(),
                 coyoteTango.getStrength(), coyoteTango.getArmor());
