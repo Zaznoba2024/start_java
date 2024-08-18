@@ -14,7 +14,7 @@ public class GuessNumber {
     }
 
     public void start() {
-        secretNumberGeneration();
+        generateSecretNumber();
         isGameOver = false;
         boolean isPlayer1Move = true;
         while (!isGameOver) {
@@ -28,7 +28,7 @@ public class GuessNumber {
         }
     }
 
-    public void secretNumberGeneration() {
+    public void generateSecretNumber() {
         secretNumber = (int) (Math.random() * 10 + 1);
     }
 
