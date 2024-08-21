@@ -6,7 +6,7 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int secretNumber;
-    boolean isGameOver;
+    private Scanner scanner = new Scanner(System.in);
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -15,39 +15,39 @@ public class GuessNumber {
 
     public void start() {
         generateSecretNumber();
-        isGameOver = false;
-        boolean isPlayer1Move = true;
-        while (!isGameOver) {
-            Player player = player1;
-            if (!isPlayer1Move) {
-                player = player2;
+        Player currentPlayer = player1;
+        do {
+            enterNumber(currentPlayer);
+            if (isGuessed(currentPlayer)) {
+                break;
             }
-            enterNumber(player);
-            checkNumber(player);
-            isPlayer1Move = !isPlayer1Move;
-        }
+            if (currentPlayer == player1) {
+                currentPlayer = player2;
+            } else {
+                currentPlayer = player1;
+            }
+        } while (true);
     }
 
-    public void generateSecretNumber() {
+    private void generateSecretNumber() {
         secretNumber = (int) (Math.random() * 10 + 1);
     }
 
-    public void enterNumber(Player player) {
+    private void enterNumber(Player player) {
         System.out.printf("Игрок %s введите число: ", player.getName());
-        Scanner scanner = new Scanner(System.in);
         player.setNumber(scanner.nextInt());
     }
 
-    public void checkNumber(Player player) {
+    private boolean isGuessed(Player player) {
         if (player.getNumber() == secretNumber) {
             System.out.printf("Выиграл игрок %s.\n", player.getName());
-            isGameOver = true;
-        } else {
-            String moreOrLess = "больше";
-            if (player.getNumber() < secretNumber) {
-                moreOrLess = "меньше";
-            }
-            System.out.printf("%s %s того, что загадал компьютер\n", player.getNumber(), moreOrLess);
+            return true;
         }
+        String moreOrLess = "больше";
+        if (player.getNumber() < secretNumber) {
+            moreOrLess = "меньше";
+        }
+        System.out.printf("%s %s того, что загадал компьютер\n", player.getNumber(), moreOrLess);
+        return false;
     }
 }
