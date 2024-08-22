@@ -6,7 +6,6 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int secretNumber;
-    private Scanner scanner = new Scanner(System.in);
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -16,24 +15,21 @@ public class GuessNumber {
     public void start() {
         generateSecretNumber();
         Player currentPlayer = player1;
+        Scanner scanner = new Scanner(System.in);
         do {
-            enterNumber(currentPlayer);
+            enterNumber(currentPlayer, scanner);
             if (isGuessed(currentPlayer)) {
                 break;
             }
-            if (currentPlayer == player1) {
-                currentPlayer = player2;
-            } else {
-                currentPlayer = player1;
-            }
+            currentPlayer = currentPlayer == player1 ? player2 : player1;
         } while (true);
     }
 
     private void generateSecretNumber() {
-        secretNumber = (int) (Math.random() * 10 + 1);
+        secretNumber = (int) (Math.random() * 100 + 1);
     }
 
-    private void enterNumber(Player player) {
+    private void enterNumber(Player player, Scanner scanner) {
         System.out.printf("Игрок %s введите число: ", player.getName());
         player.setNumber(scanner.nextInt());
     }
@@ -43,10 +39,7 @@ public class GuessNumber {
             System.out.printf("Выиграл игрок %s.\n", player.getName());
             return true;
         }
-        String moreOrLess = "больше";
-        if (player.getNumber() < secretNumber) {
-            moreOrLess = "меньше";
-        }
+        String moreOrLess = player.getNumber() < secretNumber ? "меньше" : "больше";
         System.out.printf("%s %s того, что загадал компьютер\n", player.getNumber(), moreOrLess);
         return false;
     }
