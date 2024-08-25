@@ -1,77 +1,90 @@
 package Lesson_2;
 
 public class NonBooleanMethods {
-    private String getCurrentMethodName() {
-        return Thread.currentThread().getStackTrace()[2].getMethodName();
-    }
-
-    public void findLongestWord() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void findLongestWord() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "найти самое длинное слово в предложении из книги по Java");
     }
 
-    public void chooseItem() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void chooseItem() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "выбрать пункт меню в текстовом редакторе на macOS");
     }
 
-    public void calculateAverageRating() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void calculateAverageRating() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "вычислить среднее значение оценок в школе №1234");
     }
 
-    public void countUniqueWords() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void countUniqueWords() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "подсчитать количество уникальных слов в \"Война и Мир\"");
     }
 
-    public void printErrorMessage() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void printErrorMessage() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "вывести сообщение об ошибке");
     }
 
-    public void synchronizeData() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void syncData() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "синхронизировать данные с облачным хранилищем");
     }
 
-    public void recoverData() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void recoverData() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "восстановить данные из резервной копии от 11.03.2024");
     }
 
-    public void pauseDownload() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void pauseDownload() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "приостановить загрузку mp3-файла группы \"Ария\"");
     }
 
-    public void reset() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void resetVacuum() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "сбросить настройки до заводских для пылесоса Mi");
     }
 
-    public void write() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void writeFile() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "записать содержимое в файл по указанному пути на флешку");
     }
 
-    public void convert() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void convertTemperature() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "преобразовать температуру из Цельсия в Фаренгейт");
     }
 
-    public void enterMathExpression() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void enterMathExpression() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "ввести математическое выражение с тремя аргументами");
     }
 
-    public void determineWinner() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void determineWinner() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "выявить победителя среди гонщиков игры \"Need For Speed\"");
     }
 
-    public void findBook() {
-        System.out.println(getCurrentMethodName() + "() -> " +
+    private void findBookByAuthor() {
+        System.out.println(CallCurrentMethod.getCurrentMethodName() + "() -> " +
                 "найти книгу по имени писателя");
+    }
+
+    public void getAllNonBooleanMethods() {
+        findLongestWord();
+        chooseItem();
+        calculateAverageRating();
+        countUniqueWords();
+        printErrorMessage();
+        syncData();
+        recoverData();
+        pauseDownload();
+        resetVacuum();
+        writeFile();
+        convertTemperature();
+        enterMathExpression();
+        determineWinner();
+        findBookByAuthor();
     }
 }
