@@ -1,76 +1,63 @@
 package Lesson_2;
 
 public class BooleanMethods {
-    private boolean isProgramContinue() {
-        System.out.print(CallCurrentMethod.getCurrentMethodName() + "() -> " +
+    public boolean isProgramContinue() {
+        System.out.print(MethodName.getCurrent() + "() -> " +
                 "программа выполняется далее или завершается? ");
         return true;
     }
 
-    private boolean isFileDeleted() {
-        System.out.print(CallCurrentMethod.getCurrentMethodName() + "() -> " +
+    public boolean isFileDeleted() {
+        System.out.print(MethodName.getCurrent() + "() -> " +
                 "удалился ли файл на жестком диске или флешке? ");
         return false;
     }
 
-    private boolean hasUniqueDigit() {
-        System.out.print(CallCurrentMethod.getCurrentMethodName() + "() -> " +
+    public boolean hasUniqueDigit() {
+        System.out.print(MethodName.getCurrent() + "() -> " +
                 "последовательность содержит уникальную цифру? ");
         return true;
     }
 
-    private boolean isLetter() {
-        System.out.print(CallCurrentMethod.getCurrentMethodName() + "() -> " +
+    public boolean isLetter() {
+        System.out.print(MethodName.getCurrent() + "() -> " +
                 "пользователь ввел букву или что-то другое? ");
         return false;
     }
 
-    private boolean hasEqualDigits() {
-        System.out.print(CallCurrentMethod.getCurrentMethodName() + "() -> " +
+    public boolean hasEqualDigits() {
+        System.out.print(MethodName.getCurrent() + "() -> " +
                 "в проверяемых числах, есть равные цифры? ");
         return false;
     }
 
-    private boolean hasAttempts() {
-        System.out.print(CallCurrentMethod.getCurrentMethodName() + "() -> " +
+    public boolean hasAttempts() {
+        System.out.print(MethodName.getCurrent() + "() -> " +
                 "в игре \"Марио\" остались попытки? ");
         return true;
     }
 
-    private boolean isEmpty() {
-        System.out.print(CallCurrentMethod.getCurrentMethodName() + "() -> " +
+    public boolean isEmpty() {
+        System.out.print(MethodName.getCurrent() + "() -> " +
                 "пользователь ввёл пустую строку или из одних пробелов? ");
         return true;
     }
 
-    private boolean isEvenNumber() {
-        System.out.print(CallCurrentMethod.getCurrentMethodName() + "() -> " +
+    public boolean isEvenNumber() {
+        System.out.print(MethodName.getCurrent() + "() -> " +
                 "на кубике, который бросил компьютер, выпало четное число? ");
         return false;
     }
 
-    private boolean isValidPath() {
-        System.out.print(CallCurrentMethod.getCurrentMethodName() + "() -> " +
+    public boolean isValidPath() {
+        System.out.print(MethodName.getCurrent() + "() -> " +
                 "путь до файла, который вы ищите на ssd, действительный? ");
         return false;
     }
 
-    private boolean isFileExist() {
-        System.out.print(CallCurrentMethod.getCurrentMethodName() + "() -> " +
+    public boolean isFileExist() {
+        System.out.print(MethodName.getCurrent() + "() -> " +
                 "файл по указанному адресу существует? ");
         return true;
-    }
-
-    public void getAllBooleanMethods() {
-        System.out.println(isProgramContinue());
-        System.out.println(isFileDeleted());
-        System.out.println(hasUniqueDigit());
-        System.out.println(isLetter());
-        System.out.println(hasEqualDigits());
-        System.out.println(hasAttempts());
-        System.out.println(isEmpty());
-        System.out.println(isEvenNumber());
-        System.out.println(isValidPath());
-        System.out.println(isFileExist());
     }
 }
