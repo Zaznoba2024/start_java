@@ -1,17 +1,14 @@
-package Lesson_2;
+package com.startjava.lesson_2_3.method.naming;
 
 public class MethodsTest {
     public static void main(String[] args) {
-        System.out.println("Hе boolean-методы");
-        NonBooleanMethods nbm = new NonBooleanMethods();
-        getAllNonBooleanMethods(nbm);
-
-        System.out.println("\nBoolean-методы");
-        BooleanMethods bm = new BooleanMethods();
-        getAllBooleanMethods(bm);
+        getAllNonBooleanMethods();
+        getAllBooleanMethods();
     }
 
-    private static void getAllNonBooleanMethods(NonBooleanMethods nbm) {
+    private static void getAllNonBooleanMethods() {
+        System.out.println("Hе boolean-методы");
+        NonBooleanMethods nbm = new NonBooleanMethods();
         nbm.findLongestWord();
         nbm.chooseItem();
         nbm.calculateAverageRating();
@@ -28,7 +25,9 @@ public class MethodsTest {
         nbm.findBookByAuthor();
     }
 
-    private static void getAllBooleanMethods(BooleanMethods bm) {
+    private static void getAllBooleanMethods() {
+        System.out.println("\nBoolean-методы");
+        BooleanMethods bm = new BooleanMethods();
         System.out.println(bm.isProgramContinue());
         System.out.println(bm.isFileDeleted());
         System.out.println(bm.hasUniqueDigit());
